@@ -1,0 +1,69 @@
+<html>
+<head>
+  <title>Movie Recommendation </title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" >
+        function loading(){
+            $("#loading").show();
+            $("#content").hide();       
+        }
+    </script>
+<meta charset="utf-8" />
+<style>
+table.dataframe, .dataframe th, .dataframe td {
+  border: none;
+  border-bottom: 1px solid #C8C8C8;
+  border-collapse: collapse;
+  text-align:left;
+  padding: 10px;
+  margin-bottom: 40px;
+  font-size: 0.9em;
+  color: #FFFFFF;
+}  
+.heading { color: #FFFFFF;}  
+body {
+
+    padding:0px;
+    margin:20px;
+    background:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+    background-size:auto;
+    width:100vw;
+    height:100vh;
+    
+   
+}
+
+</style>
+
+</head>
+
+<body>
+  <div class="container" >
+    <h2 style="color: white; margin:20px auto; font-weight:bold;">Hollywood Movies Recommendation System</h2>
+    <h4 style="color: white; margin:20px auto; font-weight:bold;">You will get the recommendation based on the movie u enter below
+	<br>Please Enter Correct Movie name</h4>
+	
+
+    <form action="/" method="POST" action="/submit_ts" enctype="multipart/form-data">
+      <div class="col-sm-9">
+        <div class="form-group  purple-border">
+          <label for="comment"  class="heading">Enter Movie name</label>
+          <input type="text" id="movie" name="movie" rows="2" cols="5" placeholder="Movie name" required="required">
+        </div>
+      </div><br>
+      <div class="col-sm-3">
+        <button type="submit" class="btn btn-primary" name="submit">SUBMIT</button>
+      </div><br>
+	  <div>
+      {{ table | safe }}
+    </div>
+	 
+      <!--<h3 style="color: white; margin:20px auto; font-weight:bold;">
+      {{ prediction_text }}</h3>-->
+    </form>
+  </div><br><br><br><br>
+</body>
+</html>
